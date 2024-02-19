@@ -1,4 +1,5 @@
 const PASSENGER_CAPACITY = 40;
+const TICKET_PRICE = 550;
 const SEAT_CODES = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
 const COUPON_CODES = {
    NEW15: 0.15,
@@ -16,7 +17,8 @@ const seatCounter = document.getElementById("seat-counter");
 const seatLeft = document.getElementById("seat-left");
 const totalPrice = document.getElementById("total-price");
 const grandPrice = document.getElementById("grand-total");
-const couponBtn = document.getElementById("coupon-button");
+const coupon = document.getElementById("coupon");
+const appliedCode = document.getElementById("applied-code");
 
 /**
  * Scroll to the ticket section
@@ -69,6 +71,8 @@ const createSeat = (seatNumber) => {
          selectedSeats = selectedSeats.filter((seat) => seat !== seatNumber);
          seat.classList.remove("!bg-emerald-500");
          seat.classList.remove("!text-white");
+         coupon.firstElementChild.style.display = "block";
+         coupon.lastElementChild.style.display = "none";
          domModified = true;
       } else if (selectedSeats.length < 4) {
          selectedSeats.push(seatNumber);
@@ -84,7 +88,7 @@ const createSeat = (seatNumber) => {
          checkoutTable.innerHTML = "";
          selectedSeats.forEach((seat) => addSeatRecord(seat));
          seatCounter.innerText = len;
-         cost = len * 500;
+         cost = len * TICKET_PRICE;
          totalPrice.innerText = cost;
          grandPrice.innerText = cost;
          seatLeft.innerText = PASSENGER_CAPACITY - len;
@@ -118,16 +122,15 @@ const applyCoupon = () => {
       return;
    }
 
-   const code = document.getElementById("coupon").value;
+   const code = document.getElementById("coupon-code").value;
    let discount = COUPON_CODES[code];
 
    if (discount) {
       grandTotal = cost * (1 - discount);
       grandPrice.innerText = grandTotal;
-      couponBtn.innerHTML = `Applied Coupon Code: `;
-      couponBtn.append(
-         createElement("span", "font-semibold text-neutral-800", `${code}`)
-      );
+      appliedCode.innerText = code;
+      coupon.firstElementChild.style.display = "none";
+      coupon.lastElementChild.style.display = "block";
    } else {
       alert("Wrong coupon code");
    }

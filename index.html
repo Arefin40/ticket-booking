@@ -372,20 +372,30 @@
                      </div>
 
                      <!-- coupon -->
-                     <div id="coupon-button" class="relative">
-                        <input
-                           type="text"
-                           name="coupon"
-                           id="coupon"
-                           placeholder="Have any coupon?"
-                           class="w-full h-14 px-5 rounded-xl focus:outline-none"
-                        />
-                        <button
-                           onclick="applyCoupon()"
-                           class="px-4 h-11 flex items-center justify-center bg-emerald-500 text-white rounded-lg font-semibold absolute right-2 top-1/2 -translate-y-1/2 transition-all active:scale-95"
-                        >
-                           Apply
-                        </button>
+                     <div id="coupon">
+                        <div class="relative">
+                           <input
+                              type="text"
+                              name="coupon"
+                              id="coupon-code"
+                              placeholder="Have any coupon?"
+                              class="w-full h-14 px-5 rounded-xl focus:outline-none"
+                           />
+                           <button
+                              onclick="applyCoupon()"
+                              class="px-4 h-11 flex items-center justify-center bg-emerald-500 text-white rounded-lg font-semibold absolute right-2 top-1/2 -translate-y-1/2 transition-all active:scale-95"
+                           >
+                              Apply
+                           </button>
+                        </div>
+
+                        <h1 class="hidden">
+                           Applied Coupon Code:
+                           <span
+                              id="applied-code"
+                              class="font-semibold text-neutral-800"
+                           ></span>
+                        </h1>
                      </div>
 
                      <div

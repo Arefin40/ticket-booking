@@ -1,4 +1,10 @@
+const PASSENGER_CAPACITY = 40;
 const SEAT_CODES = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+const COUPON_CODES = {
+   NEW15: 0.15,
+   "Couple 20": 0.2,
+};
+
 let selectedSeats = [];
 let cost = 0;
 let grandTotal = 0;
@@ -7,8 +13,10 @@ const ticketSection = document.getElementById("ticket-section");
 const seats = document.getElementById("seats");
 const checkoutTable = document.getElementById("checkout-table");
 const seatCounter = document.getElementById("seat-counter");
+const seatLeft = document.getElementById("seat-left");
 const totalPrice = document.getElementById("total-price");
 const grandPrice = document.getElementById("grand-total");
+const couponBtn = document.getElementById("coupon-button");
 
 /**
  * Scroll to the ticket section
@@ -72,18 +80,22 @@ const createSeat = (seatNumber) => {
       }
 
       if (domModified) {
+         const len = selectedSeats.length;
          checkoutTable.innerHTML = "";
          selectedSeats.forEach((seat) => addSeatRecord(seat));
-         seatCounter.textContent = selectedSeats.length;
-         cost = selectedSeats.length * 500;
-         totalPrice.textContent = cost;
-         grandPrice.textContent = cost;
+         seatCounter.innerText = len;
+         cost = len * 500;
+         totalPrice.innerText = cost;
+         grandPrice.innerText = cost;
+         seatLeft.innerText = PASSENGER_CAPACITY - len;
       }
    });
    seats.appendChild(seat);
 };
 
-// Generate seats
+/**
+ * Generate seats
+ */
 SEAT_CODES.forEach((code) => {
    seats.appendChild(
       createElement("span", "flex justify-end items-center", code)
@@ -94,3 +106,29 @@ SEAT_CODES.forEach((code) => {
    createSeat(`${code}3`);
    createSeat(`${code}4`);
 });
+
+/**
+ * Applies the coupon if valid, alerts otherwise.
+ */
+const applyCoupon = () => {
+   if (selectedSeats.length < 4) {
+      alert(
+         "You must purchase 4 tickets in order to qualify for the discount."
+      );
+      return;
+   }
+
+   const code = document.getElementById("coupon").value;
+   let discount = COUPON_CODES[code];
+
+   if (discount) {
+      grandTotal = cost * (1 - discount);
+      grandPrice.innerText = grandTotal;
+      couponBtn.innerHTML = `Applied Coupon Code: `;
+      couponBtn.append(
+         createElement("span", "font-semibold text-neutral-800", `${code}`)
+      );
+   } else {
+      alert("Wrong coupon code");
+   }
+};

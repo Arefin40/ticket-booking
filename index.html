@@ -409,14 +409,10 @@
                   </div>
 
                   <!-- Form -->
-                  <form
-                     method="post"
-                     onsubmit="submitForm()"
-                     class="mt-6 grid gap-y-6"
-                  >
+                  <div class="mt-6 grid gap-y-6">
                      <div class="grid gap-y-4">
                         <label for="name" class="font-bold text-neutral-800">
-                           Passenger Name*
+                           Passenger Name
                         </label>
                         <input
                            type="text"
@@ -431,10 +427,11 @@
                            Phone Number*
                         </label>
                         <input
-                           type="text"
+                           type="tel"
                            name="phone"
                            id="phone"
                            placeholder="Enter your phone number"
+                           oninput="validateContactNumber()"
                            class="px-6 h-16 w-full border rounded-xl focus:outline-none"
                         />
                      </div>
@@ -452,8 +449,8 @@
                      </div>
 
                      <button
-                        type="submit"
-                        class="bg-emerald-500 text-white rounded-xl h-16 font-bold text-xl"
+                        onclick="submit()"
+                        class="bg-emerald-500 text-white rounded-xl h-16 font-bold text-xl transition-all active:scale-95"
                      >
                         Next
                      </button>
@@ -462,11 +459,37 @@
                         <a href="" class="underline">Terms and Conditions</a>
                         <a href="" class="underline">Cancellation Policy</a>
                      </div>
-                  </form>
+                  </div>
                </div>
             </section>
          </section>
       </main>
+
+      <!-- Success Modal -->
+      <section
+         id="success-modal"
+         class="invisible fixed inset-0 flex items-center justify-center bg-black/50 z-50"
+      >
+         <div
+            class="p-14 grid gap-y-6 justify-items-center bg-white rounded-2xl shadow-xl ransition-transform transform scale-0 ease-in duration-300"
+         >
+            <img src="images/Success.svg" alt="SuccessTcik" class="w-24 h-24" />
+            <h1 class="text-emerald-500 font-bold text-2xl text-center">
+               SUCCESS
+            </h1>
+            <div class="grid gap-y-3 text-center text-base">
+               <span class="font-semibold text-lg">
+                  Thank you for Booking Our Bus Seats.
+               </span>
+               <span class="text-neutral-500 font-light">
+                  We are working hard to find the best service and deals for
+                  you.
+                  <br />
+                  Shortly you will find a confirmation in your email.
+               </span>
+            </div>
+         </div>
+      </section>
 
       <!-- ANCHOR Footer -->
       <footer class="mt-32 py-28 bg-gray-950 text-neutral-200">

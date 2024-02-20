@@ -19,6 +19,8 @@ const totalPrice = document.getElementById("total-price");
 const grandPrice = document.getElementById("grand-total");
 const coupon = document.getElementById("coupon");
 const appliedCode = document.getElementById("applied-code");
+const phoneInput = document.getElementById("phone");
+const modal = document.getElementById("success-modal");
 
 /**
  * Scroll to the ticket section
@@ -133,5 +135,24 @@ const applyCoupon = () => {
       coupon.lastElementChild.style.display = "block";
    } else {
       alert("Wrong coupon code");
+   }
+};
+
+/**
+ * Allow only numbers as contact number
+ * @param {InputEvent} event
+ */
+const validateContactNumber = () => {
+   phoneInput.value = phoneInput.value.replace(/\D/g, "");
+};
+
+/**
+ * Submit form
+ */
+const submit = () => {
+   const contactNumber = document.getElementById("phone").value.trim();
+   if (contactNumber !== "" && selectedSeats.length > 0) {
+      modal.classList.add("!visible");
+      modal.children[0].classList.add("!scale-100");
    }
 };

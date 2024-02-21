@@ -30,11 +30,27 @@
    <body>
       <!-- ANCHOR Header -->
       <header
-         class="mt-12 mb-6 mx-auto container flex items-center justify-between"
+         class="relative px-5 lg:px-0 py-3 mb-4 lg:my-4 mx-auto container flex items-center justify-between border-b lg:border-0"
       >
-         <h1 class="text-4xl font-extrabold">P-Ticket</h1>
-         <nav>
-            <ul class="flex gap-x-14 items-center font-semibold">
+         <div class="flex items-center gap-x-3">
+            <button class="lg:hidden" onclick="toggleNavigationMenu()">
+               <img
+                  src="images/Hamburger.svg"
+                  alt="Menuicon"
+                  class="w-5 h-5 lg:w-6 lg:h-6"
+               />
+            </button>
+
+            <h1 class="text-2xl lg:text-4xl font-extrabold">P-Ticket</h1>
+         </div>
+
+         <nav
+            id="nav-menu"
+            class="hidden md:block py-12 lg:py-0 absolute inset-x-0 top-full lg:static bg-white z-50 shadow-2xl border-y lg:border-0"
+         >
+            <ul
+               class="grid gap-y-6 lg:flex lg:gap-x-14 lg:items-center text-center font-semibold"
+            >
                <li class="hover:text-emerald-500"><a href=".">Home</a></li>
                <li class="hover:text-emerald-500"><a href=".">About</a></li>
                <li class="hover:text-emerald-500">
@@ -45,26 +61,34 @@
          </nav>
          <button
             onclick="scrollToTicketSection()"
-            class="px-6 py-3 flex items-center space-x-3 text-emerald-500 bg-emerald-50 hover:bg-emerald-100 border-2 border-emerald-500 rounded-lg transition-all active:scale-95"
+            class="px-4 lg:px-6 py-2 lg:py-3 flex items-center space-x-3 text-emerald-500 bg-emerald-50 hover:bg-emerald-100 border-2 border-emerald-500 rounded-lg transition-all active:scale-95"
          >
             <span>Bus</span>
             <img src="images/BusGreen.svg" alt="BusGreen" class="w-6 h-6" />
          </button>
       </header>
 
-      <main class="mx-auto container grid gap-y-32 text-neutral-500">
+      <main
+         class="px-5 lg:px-0 mx-auto container grid gap-y-16 lg:gap-y-32 mb-16 lg:mb-32 text-neutral-500"
+      >
          <!-- ANCHOR Hero Section -->
          <section
-            class="relative mb-[4.5rem] pt-16 pb-32 grid justify-items-center bg-hero-image bg-no-repeat bg-cover bg-center rounded-3xl text-white"
+            class="relative lg:mb-[4.5rem] px-5 py-10 lg:px-0 lg:pt-16 lg:pb-32 grid justify-items-center bg-hero-image bg-no-repeat bg-cover bg-center rounded-3xl text-white"
          >
-            <h1 class="font-extrabold text-6xl text-center leading-normal">
+            <h1
+               class="font-extrabold text-4xl lg:text-6xl text-center lg:leading-normal"
+            >
                End-to-End Travel with
-               <span class="block text-emerald-400 italic font-serif">
+               <span
+                  class="mt-2 lg:mt-0 block text-emerald-400 italic font-serif"
+               >
                   P Paribahan
                </span>
             </h1>
 
-            <p class="mt-4 mx-auto max-w-screen-sm text-center text-lg">
+            <p
+               class="mt-4 mx-auto px-5 lg:px-0 max-w-screen-sm text-center text-lg"
+            >
                Experience the joy of hassle-free travel as you sit back, relax,
                and let us take you where you need to go.
             </p>
@@ -76,10 +100,10 @@
             </button>
 
             <div
-               class="w-full max-w-screen-lg absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-cols-3 gap-x-6 items-cente"
+               class="mt-10 lg:mt-0 px-6 w-full max-w-screen-lg grid lg:grid-cols-3 items-center gap-y-3 gap-x-6 lg:absolute lg:top-full lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
             >
                <div
-                  class="relative p-8 flex items-center gap-x-5 rounded-3xl bg-white shadow-md"
+                  class="relative p-5 lg:p-8 flex items-center gap-x-5 rounded-3xl bg-white shadow-md"
                >
                   <img
                      src="images/People.svg"
@@ -87,8 +111,10 @@
                      class="w-16 h-16 p-2"
                   />
 
-                  <div class="grid gap-y-1">
-                     <span class="font-extrabold text-4xl text-neutral-950">
+                  <div class="grid lg:gap-y-1">
+                     <span
+                        class="font-extrabold text-3xl lg:text-4xl text-neutral-950"
+                     >
                         500K+
                      </span>
                      <span class="text-neutral-500">Registered users</span>
@@ -100,7 +126,7 @@
                </div>
 
                <div
-                  class="relative p-8 flex items-center gap-x-5 rounded-3xl bg-white shadow-md"
+                  class="relative p-5 lg:p-8 flex items-center gap-x-5 rounded-3xl bg-white shadow-md"
                >
                   <img
                      src="images/Ticket.svg"
@@ -108,8 +134,10 @@
                      class="w-16 h-16 p-2"
                   />
 
-                  <div class="grid gap-y-1">
-                     <span class="font-extrabold text-4xl text-neutral-950">
+                  <div class="grid lg:gap-y-1">
+                     <span
+                        class="font-extrabold text-3xl lg:text-4xl text-neutral-950"
+                     >
                         1.7 lacks
                      </span>
                      <span class="text-neutral-500">Tickets sold</span>
@@ -121,7 +149,7 @@
                </div>
 
                <div
-                  class="relative p-8 flex items-center gap-x-5 rounded-3xl bg-white shadow-md"
+                  class="relative p-5 lg:p-8 flex items-center gap-x-5 rounded-3xl bg-white shadow-md"
                >
                   <img
                      src="images/BusRental.svg"
@@ -129,8 +157,10 @@
                      class="w-16 h-16 p-2"
                   />
 
-                  <div class="grid gap-y-1">
-                     <span class="font-extrabold text-4xl text-neutral-950">
+                  <div class="grid lg:gap-y-1">
+                     <span
+                        class="font-extrabold text-3xl lg:text-4xl text-neutral-950"
+                     >
                         80K+
                      </span>
                      <span class="text-neutral-500">Rental partners</span>
@@ -145,15 +175,21 @@
 
          <!-- ANCHOR Best offers Section -->
          <section>
-            <h1 class="font-bold text-4xl text-center text-neutral-800">
+            <h1
+               class="font-bold text-3xl lg:text-4xl text-center text-neutral-800"
+            >
                Best offers for you
             </h1>
-            <div class="mt-12 flex flex-row justify-center gap-x-6">
+            <div
+               class="mt-8 lg:mt-12 grid lg:flex lg:justify-center gap-y-5 gap-x-6"
+            >
                <div
-                  class="px-14 max-w-xl grid grid-cols-[3fr_1fr_2fr] bg-[#FFBF0F] rounded-3xl transition-all hover:scale-105 duration-300 text-neutral-800"
+                  class="px-6 lg:px-14 w-full max-w-xl grid grid-cols-[3fr_auto_2fr] bg-[#FFBF0F] rounded-3xl transition-all hover:scale-105 duration-300 text-neutral-800 flex-shrink-0"
                >
-                  <div class="py-14 grid gap-y-1">
-                     <h1 class="font-black text-5xl">15% OFF</h1>
+                  <div class="mr-auto lg:mr-0 py-6 lg:py-14 grid lg:gap-y-1">
+                     <h1 class="font-bold lg:font-black text-3xl lg:text-5xl">
+                        15% OFF
+                     </h1>
                      <h2>on your next purchase</h2>
                      <h4 class="text-black/50">use by January 2024</h4>
                   </div>
@@ -161,24 +197,26 @@
                      <img
                         src="images/Cupon-Devider.svg"
                         alt="Cupon-Devider"
-                        class="max-h-fit"
+                        class="h-full"
                      />
                   </div>
                   <div
-                     class="py-14 text-center grid gap-y-1 content-center items-center"
+                     class="py-14 min-w-24 text-center grid gap-y-1 content-center items-center"
                   >
-                     <h1 class="font-bold text-3xl">NEW15</h1>
-                     <span class="text-black/50 text-xl font-medium">
+                     <h1 class="font-bold text-xl lg:text-3xl">NEW15</h1>
+                     <span class="text-black/50 text-sm lg:text-xl font-medium">
                         Coupon Code
                      </span>
                   </div>
                </div>
 
                <div
-                  class="px-14 max-w-xl grid grid-cols-[3fr_1fr_2fr] bg-[#F78C9C] rounded-3xl transition-all hover:scale-105 duration-300 text-neutral-800"
+                  class="px-6 lg:px-14 w-full max-w-xl grid grid-cols-[3fr_auto_2fr] bg-[#F78C9C] rounded-3xl transition-all hover:scale-105 duration-300 text-neutral-800 flex-shrink-0"
                >
-                  <div class="py-14 grid gap-y-1">
-                     <h1 class="font-black text-5xl">20% OFF</h1>
+                  <div class="mr-auto lg:mr-0 py-6 lg:py-14 grid lg:gap-y-1">
+                     <h1 class="font-bold lg:font-black text-3xl lg:text-5xl">
+                        20% OFF
+                     </h1>
                      <h2>on your next purchase</h2>
                      <h4 class="text-black/50">use by January 2024</h4>
                   </div>
@@ -186,23 +224,23 @@
                      <img
                         src="images/Cupon-Devider.svg"
                         alt="Cupon-Devider"
-                        class="max-h-fit"
+                        class="h-full"
                      />
                   </div>
                   <div
-                     class="py-14 text-center grid gap-y-1 content-center items-center"
+                     class="py-14 min-w-24 text-center grid gap-y-1 content-center items-center"
                   >
-                     <h1 class="font-bold text-3xl">Couple 20</h1>
-                     <span class="text-black/50 text-xl font-medium">
+                     <h1 class="font-bold text-xl lg:text-3xl">Couple 20</h1>
+                     <span class="text-black/50 text-sm lg:text-xl font-medium">
                         Coupon Code
                      </span>
                   </div>
                </div>
             </div>
 
-            <div class="mt-12 flex justify-center">
+            <div class="mt-6 lg:mt-12 flex justify-center">
                <button
-                  class="px-8 py-5 rounded-lg border-2 border-emerald-500 text-emerald-500 font-semibold transition-all hover:bg-emerald-50 active:scale-95"
+                  class="px-6 lg:px-8 py-3 lg:py-5 rounded-lg border-2 border-emerald-500 text-emerald-500 font-semibold transition-all hover:bg-emerald-50 active:scale-95"
                >
                   See All Offers
                </button>
@@ -210,8 +248,8 @@
          </section>
 
          <!-- ANCHOR Ticket Section -->
-         <section id="ticket-section" class="container mx-auto">
-            <header class="mb-12 text-center grid gap-y-6">
+         <section id="ticket-section" class="w-full">
+            <header class="mb-10 lg:mb-20 text-center grid gap-y-6">
                <h1 class="text-4xl font-bold text-neutral-800">
                   P.H Paribahan
                </h1>
@@ -223,7 +261,7 @@
             </header>
 
             <!-- Ticket info -->
-            <div class="mt-20 flex items-center gap-x-8">
+            <div class="w-full grid lg:flex items-center gap-x-8">
                <!-- Info table -->
                <div class="w-full grid gap-y-8">
                   <div class="flex items-center justify-between">
@@ -231,22 +269,24 @@
                         <img
                            src="images/BusIcon.svg"
                            alt="Bus icon"
-                           class="h-16"
+                           class="h-14 lg:h-16"
                         />
                         <div>
-                           <h1 class="font-bold text-3xl text-neutral-800">
+                           <h1
+                              class="font-bold text-lg lg:text-3xl text-neutral-800"
+                           >
                               Greenline Paribahan
                            </h1>
                            <span> Coach-64-AC-Business </span>
                         </div>
                      </div>
                      <button
-                        class="p-4 flex items-center gap-x-2 rounded-xl text-emerald-500 bg-emerald-50"
+                        class="px-3 py-1.5 lg:p-4 grid justify-items-center lg:flex lg:items-center gap-x-2 rounded-xl text-emerald-500 bg-emerald-50"
                      >
                         <img
                            src="images/SeatGreen.svg"
                            alt="Seat"
-                           class="w-6 h-6"
+                           class="w-5 h-5 lg:w-6 lg:h-6"
                         />
                         <span>
                            <span id="seat-left" class="font-bold">40</span>
@@ -255,17 +295,20 @@
                      </button>
                   </div>
 
-                  <div class="p-8 grid gap-y-6 bg-lightgray rounded-xl">
+                  <div
+                     class="p-6 lg:p-8 grid gap-y-4 lg:gap-y-6 bg-lightgray rounded-xl"
+                  >
                      <div
-                        class="pb-6 flex justify-between text-lg border-b border-dashed border-neutral-400"
+                        class="pb-4 lg:pb-6 flex justify-between text-base lg:text-lg border-b border-dashed border-neutral-400"
                      >
                         <span>Route</span>
                         <span class="font-semibold text-neutral-800">
                            Dhaka - Sylhet
                         </span>
                      </div>
+
                      <div
-                        class="pb-6 flex justify-between text-lg border-b border-dashed border-neutral-400"
+                        class="pb-4 lg:pb-6 flex justify-between text-base lg:text-lg border-b border-dashed border-neutral-400"
                      >
                         <span>Departure Time</span>
                         <span class="font-semibold text-neutral-800">
@@ -273,7 +316,9 @@
                         </span>
                      </div>
 
-                     <div class="flex items-center gap-x-6">
+                     <div
+                        class="pt-4 lg:pt-0 grid lg:flex items-center gap-y-2 gap-x-6 text-center lg:text-right"
+                     >
                         <div
                            class="px-3 py-4 bg-[#EBECEC] text-neutral-800 rounded-lg"
                         >
@@ -293,16 +338,28 @@
                   </div>
                </div>
 
-               <div class="flex-shrink-0 min-w-20">
+               <div class="hidden lg:flex flex-shrink-0 min-w-20">
                   <img src="images/Section-Devider.svg" class="h-full" />
                </div>
 
                <div
-                  class="grid gap-y-6 text-center flex-shrink-0 justify-items-center"
+                  class="mt-6 relative flex items-center justify-between lg:hidden"
+               >
+                  <div
+                     class="w-full border-b-2 border-dashed border-emerald-500 absolute top-1/2 -translate-y-1/2 -z-10"
+                  ></div>
+                  <div class="w-8 h-16 rounded-r-full bg-lightgray"></div>
+                  <div class="w-8 h-16 rounded-l-full bg-lightgray"></div>
+               </div>
+
+               <div
+                  class="flex justify-center lg:grid gap-x-4 gap-y-6 lg:text-center flex-shrink-0 justify-items-center"
                >
                   <img src="images/Taka.svg" alt="BDT icon" class="w-12 h-12" />
                   <div class="grid">
-                     <h1 class="text-3xl font-bold text-neutral-800">
+                     <h1
+                        class="text-2xl lg:text-3xl font-bold text-neutral-800"
+                     >
                         550 Taka
                      </h1>
                      <span>Per Seat</span>
@@ -310,13 +367,15 @@
                </div>
             </div>
 
-            <section class="mt-14 grid grid-cols-12 gap-x-16">
-               <div class="col-span-7">
-                  <h1 class="text-2xl font-semibold text-neutral-800">
+            <section class="mt-14 grid lg:grid-cols-12 gap-y-12 lg:gap-x-16">
+               <div class="lg:col-span-7">
+                  <h1
+                     class="text-lg lg:text-2xl font-semibold text-neutral-800"
+                  >
                      Select Your Seat
                   </h1>
                   <div
-                     class="my-6 py-4 flex items-center justify-between border-y border-dashed border-neutral-400 font-medium"
+                     class="my-4 lg:my-6 py-3 lg:py-4 flex items-center justify-between border-y border-dashed border-neutral-400 font-medium"
                   >
                      <div class="flex items-center gap-x-2">
                         <img src="images/Seat.svg" alt="Seat" class="w-6 h-6" />
@@ -334,17 +393,21 @@
                   <!-- Seats -->
                   <div
                      id="seats"
-                     class="w-full grid grid-cols-[0.5rem_repeat(2,6.875rem)_1fr_repeat(2,6.875rem)] auto-rows-[3.5rem] gap-8"
+                     class="mx-auto lg:mx-0 w-full max-w-sm lg:max-w-full grid grid-cols-[0.5rem_repeat(2,3.75rem)_1fr_repeat(2,3.75rem)] lg:grid-cols-[0.5rem_repeat(2,6.875rem)_1fr_repeat(2,6.875rem)] auto-rows-[2.5rem] lg:auto-rows-[3.5rem] gap-6 lg:gap-8"
                   >
                      <div
-                        class="col-start-6 rounded-xl bg-neutral-200 flex items-center justify-center"
+                        class="col-start-6 rounded-lg lg:rounded-xl bg-neutral-200 flex items-center justify-center"
                      >
-                        <img src="images/Steering.svg" alt="Steering" />
+                        <img
+                           src="images/Steering.svg"
+                           alt="Steering"
+                           class="w-6 h-6"
+                        />
                      </div>
                   </div>
                </div>
-               <div class="col-span-5">
-                  <div class="p-8 grid gap-y-4 rounded-xl bg-lightgray">
+               <div class="lg:col-span-5">
+                  <div class="p-5 lg:p-8 grid gap-y-4 rounded-xl bg-lightgray">
                      <!-- checkout table -->
                      <div
                         class="pb-4 grid grid-cols-3 border-b border-dashed border-neutral-400 text-neutral-800 font-semibold"
@@ -410,7 +473,7 @@
 
                   <!-- Form -->
                   <div class="mt-6 grid gap-y-6">
-                     <div class="grid gap-y-4">
+                     <div class="grid gap-y-2 lg:gap-y-4">
                         <label for="name" class="font-bold text-neutral-800">
                            Passenger Name
                         </label>
@@ -419,10 +482,11 @@
                            name="name"
                            id="name"
                            placeholder="Enter your name"
-                           class="px-6 h-16 w-full border rounded-xl focus:outline-none"
+                           class="px-4 lg:px-6 h-14 lg:h-16 w-full border rounded-xl focus:outline-none"
                         />
                      </div>
-                     <div class="grid gap-y-4">
+
+                     <div class="grid gap-y-2 lg:gap-y-4">
                         <label for="phone" class="font-bold text-neutral-800">
                            Phone Number*
                         </label>
@@ -432,10 +496,11 @@
                            id="phone"
                            placeholder="Enter your phone number"
                            oninput="validateContactNumber()"
-                           class="px-6 h-16 w-full border rounded-xl focus:outline-none"
+                           class="px-4 lg:px-6 h-14 lg:h-16 w-full border rounded-xl focus:outline-none"
                         />
                      </div>
-                     <div class="grid gap-y-4">
+
+                     <div class="grid gap-y-2 lg:gap-y-4">
                         <label for="email" class="font-bold text-neutral-800">
                            Email ID
                         </label>
@@ -444,18 +509,20 @@
                            name="email"
                            id="email"
                            placeholder="Enter your email id"
-                           class="px-6 h-16 w-full border rounded-xl focus:outline-none"
+                           class="px-4 lg:px-6 h-14 lg:h-16 w-full border rounded-xl focus:outline-none"
                         />
                      </div>
 
                      <button
                         onclick="submit()"
-                        class="bg-emerald-500 text-white rounded-xl h-16 font-bold text-xl transition-all active:scale-95"
+                        class="bg-emerald-500 text-white rounded-xl h-14 lg:h-16 font-bold text-xl transition-all active:scale-95"
                      >
                         Next
                      </button>
 
-                     <div class="flex items-center justify-between">
+                     <div
+                        class="flex items-center justify-center gap-x-8 text-sm lg:text-base"
+                     >
                         <a href="" class="underline">Terms and Conditions</a>
                         <a href="" class="underline">Cancellation Policy</a>
                      </div>
@@ -468,34 +535,41 @@
       <!-- Success Modal -->
       <section
          id="success-modal"
-         class="invisible fixed inset-0 flex items-center justify-center bg-black/50 z-50"
+         class="invisible p-6 fixed inset-0 flex items-center justify-center bg-black/50 z-50"
       >
          <div
-            class="p-14 grid gap-y-6 justify-items-center bg-white rounded-2xl shadow-xl ransition-transform transform scale-0 ease-in duration-300"
+            class="p-8 lg:p-14 grid gap-y-3 lg:gap-y-6 justify-items-center bg-white rounded-2xl shadow-xl ransition-transform transform scale-0 ease-in duration-300"
          >
-            <img src="images/Success.svg" alt="SuccessTcik" class="w-24 h-24" />
-            <h1 class="text-emerald-500 font-bold text-2xl text-center">
+            <img
+               src="images/Success.svg"
+               alt="SuccessTcik"
+               class="w-16 h-16 lg:w-24 lg:h-24"
+            />
+            <h1
+               class="text-emerald-500 font-bold text-lg lg:text-2xl text-center"
+            >
                SUCCESS
             </h1>
-            <div class="grid gap-y-3 text-center text-base">
-               <span class="font-semibold text-lg">
+            <div class="grid gap-y-3 text-center text-sm lg:text-base">
+               <span class="font-semibold text-base lg:text-lg">
                   Thank you for Booking Our Bus Seats.
                </span>
-               <span class="text-neutral-500 font-light">
+               <span class="text-neutral-500 lg:font-light">
                   We are working hard to find the best service and deals for
                   you.
-                  <br />
-                  Shortly you will find a confirmation in your email.
+                  <span class="mt-3 block">
+                     Shortly you will find a confirmation in your email.
+                  </span>
                </span>
             </div>
          </div>
       </section>
 
       <!-- ANCHOR Footer -->
-      <footer class="mt-32 py-28 bg-gray-950 text-neutral-200">
-         <section class="mx-auto container">
-            <div class="flex justify-between">
-               <div class="grid gap-y-4">
+      <footer class="py-12 lg:py-28 bg-gray-950 text-neutral-200">
+         <section class="px-5 lg:px-0 mx-auto container">
+            <div class="grid gap-y-6 justify-center lg:flex lg:justify-between">
+               <div class="grid gap-y-4 text-center lg:text-left">
                   <h1 class="text-3xl font-extrabold">P-Ticket</h1>
                   <p class="max-w-80 text-white/70">
                      P-Ticket is a digital platform to make your daily commuting
@@ -503,25 +577,29 @@
                   </p>
                </div>
 
-               <div class="grid gap-y-3 justify-items-end content-start">
+               <div
+                  class="grid gap-y-2 lg:gap-y-3 justify-items-center lg:justify-items-end content-start"
+               >
                   <span class="font-semibold">Download our app</span>
                   <button class="transition-all active:scale-95 select-none">
                      <img
                         src="images/PlayStore.svg"
                         alt="PlayStore"
-                        class="h-14"
+                        class="h-12 lg:h-14"
                      />
                   </button>
                </div>
             </div>
 
             <div
-               class="mt-12 pt-8 flex items-center justify-between border-t border-dashed border-white/30"
+               class="mt-12 pt-8 grid gap-y-8 lg:flex items-center justify-center lg:justify-between border-t border-dashed border-white/30 text-center lg:text-right"
             >
-               <p class="text-white/70">
+               <p class="text-white/70 order-2 lg:order-1 text-sm lg:text-base">
                   &copy; 2024 - All rights reserved, P-Ticket services limited.
                </p>
-               <ul class="flex gap-x-8 items-center">
+               <ul
+                  class="grid lg:flex gap-y-1 gap-x-8 items-center order-1 lg:order-2"
+               >
                   <li><a href="">Terms & condition</a></li>
                   <li><a href="">Return & refund policy</a></li>
                   <li><a href="">Privacy policy</a></li>

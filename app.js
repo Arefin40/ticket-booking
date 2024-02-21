@@ -11,6 +11,7 @@ let cost = 0;
 let grandTotal = 0;
 
 const ticketSection = document.getElementById("ticket-section");
+const navigationMenu = document.getElementById("nav-menu");
 const seats = document.getElementById("seats");
 const checkoutTable = document.getElementById("checkout-table");
 const seatCounter = document.getElementById("seat-counter");
@@ -27,6 +28,13 @@ const modal = document.getElementById("success-modal");
  */
 const scrollToTicketSection = () => {
    ticketSection.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
+/**
+ * Toggles (show/hide) navigation menu
+ */
+const toggleNavigationMenu = () => {
+   navigationMenu.classList.toggle("hidden");
 };
 
 /**
@@ -64,7 +72,7 @@ const addSeatRecord = (seatNumber) => {
 const createSeat = (seatNumber) => {
    const seat = createElement(
       "button",
-      "rounded-xl bg-lightgray flex items-center justify-center",
+      "rounded-lg lg:rounded-xl bg-lightgray flex items-center justify-center",
       seatNumber
    );
    seat.addEventListener("click", () => {

@@ -117,12 +117,7 @@ SEAT_CODES.forEach((code) => {
  * Applies the coupon if valid, alerts otherwise.
  */
 const applyCoupon = () => {
-   if (selectedSeats.length < 4) {
-      alert(
-         "You must purchase 4 tickets in order to qualify for the discount."
-      );
-      return;
-   }
+   if (selectedSeats.length < 4) return;
 
    const code = document.getElementById("coupon-code").value;
    let discount = COUPON_CODES[code];
